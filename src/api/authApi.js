@@ -1,5 +1,4 @@
-// TODO: put your student email here (assignment says: student email + demo123456)
-const DEMO = { username: 'YOUR_STUDENT_EMAIL', password: 'demo123456' };
+const DEMO = { username: '230408032@st.biruni.edu.tr', password: 'demo123456' };
 
 // Simulated server call: resolves after ~500 ms.
 export function login(username, password) {
