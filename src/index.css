@@ -28,3 +28,7 @@ button { padding: 6px 12px; font-size: 15px; cursor: pointer; }
 .login-form { display: flex; flex-direction: column; gap: 12px; max-width: 320px; }
 .login-form label { display: flex; flex-direction: column; gap: 4px; }
 .login-form input { padding: 6px 8px; font-size: 15px; }
+
+.cart-list { list-style: none; padding: 0; }
+.cart-item { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #ddd; flex-wrap: wrap; }
+.cart-title { flex: 1; min-width: 150px; }

@@ -1,10 +1,12 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch.js';
 import { fetchProduct } from '../api/productsApi.js';
+import { useCartStore } from '../store/cartStore.js';
 
 export default function ProductDetail() {
   const { id } = useParams(); // always a string, e.g. "5"
   const navigate = useNavigate();
+  const addItem = useCartStore((s) => s.addItem); // select only the action
 
   // [id] as dependency: going from /products/1 to /products/2 loads the new product
   const { loading, error, data: product } = useFetch(
@@ -39,7 +41,7 @@ export default function ProductDetail() {
       <p className="muted">{product.category}</p>
       <p>{product.description}</p>
       <p className="price">${product.price}</p>
-      <button disabled title="Cart comes in a later step">Add to cart</button>
+      <button onClick={() => addItem(product)}>Add to cart</button>
       <p>
         {/* Number(id): the URL parameter is a string */}
         <Link to={`/products/${Number(id) + 1}`}>Next product &rarr;</Link>
