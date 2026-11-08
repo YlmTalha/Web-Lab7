@@ -19,3 +19,6 @@ body { margin: 0; font-family: system-ui, sans-serif; }
 
 .filters { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
 .filters input, .filters select { padding: 6px 8px; font-size: 15px; }
+
+.detail img { max-width: 100%; height: auto; display: block; margin: 12px 0; }
+button { padding: 6px 12px; font-size: 15px; cursor: pointer; }
