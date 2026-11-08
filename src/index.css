@@ -16,3 +16,6 @@ body { margin: 0; font-family: system-ui, sans-serif; }
 .muted { color: #777; font-size: 14px; margin: 0; }
 .price { font-weight: bold; }
 .error { color: #c0392b; }
+
+.filters { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.filters input, .filters select { padding: 6px 8px; font-size: 15px; }
