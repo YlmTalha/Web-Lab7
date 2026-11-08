@@ -1,19 +1,25 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: system-ui, sans-serif; }
 
+/* theme: CSS custom properties switched by a class on the wrapper */
+.app.light { --bg: #ffffff; --text: #1a1a1a; --border: var(--border)ccc; --muted: #777777; }
+.app.dark  { --bg: #1e1e1e; --text: #eeeeee; --border: #444444; --muted: #aaaaaa; }
+.app { background: var(--bg); color: var(--text); }
+.app button, .app input, .app select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+
 .app { min-height: 100vh; display: flex; flex-direction: column; }
-.navbar { display: flex; gap: 16px; align-items: center; padding: 12px 20px; border-bottom: 1px solid #ccc; }
+.navbar { display: flex; gap: 16px; align-items: center; padding: 12px 20px; border-bottom: 1px solid var(--border); }
 .navbar a { text-decoration: none; color: inherit; }
 .navbar a.active { font-weight: bold; text-decoration: underline; }
 .content { flex: 1; padding: 20px; }
-.footer { padding: 12px 20px; border-top: 1px solid #ccc; font-size: 14px; }
+.footer { padding: 12px 20px; border-top: 1px solid var(--border); font-size: 14px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
-.card { border: 1px solid #ccc; border-radius: 8px; padding: 12px; }
+.card { border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
 .card a { color: inherit; text-decoration: none; }
 .card img { width: 100%; height: auto; object-fit: cover; }
 .card h3 { font-size: 16px; margin: 8px 0 4px; }
-.muted { color: #777; font-size: 14px; margin: 0; }
+.muted { color: var(--muted); font-size: 14px; margin: 0; }
 .price { font-weight: bold; }
 .error { color: #c0392b; }
 
@@ -30,5 +36,5 @@ button { padding: 6px 12px; font-size: 15px; cursor: pointer; }
 .login-form input { padding: 6px 8px; font-size: 15px; }
 
 .cart-list { list-style: none; padding: 0; }
-.cart-item { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #ddd; flex-wrap: wrap; }
+.cart-item { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
 .cart-title { flex: 1; min-width: 150px; }

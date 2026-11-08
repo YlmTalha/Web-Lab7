@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useCartStore, selectItemCount } from '../store/cartStore.js';
 
-export default function NavBar() {
+export default function NavBar({ theme, onToggleTheme }) {
   const { user, logOut } = useAuth();
   // a number (primitive): NavBar re-renders only when the count changes
   const itemCount = useCartStore(selectItemCount);
@@ -15,6 +15,10 @@ export default function NavBar() {
       <NavLink to="/cart">Cart ({itemCount})</NavLink>
 
       <span className="spacer" />
+
+      <button onClick={onToggleTheme}>
+        {theme === 'light' ? 'Dark mode' : 'Light mode'}
+      </button>
 
       {user ? (
         <>
