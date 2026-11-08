@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; }
+
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.navbar { display: flex; gap: 16px; align-items: center; padding: 12px 20px; border-bottom: 1px solid #ccc; }
+.navbar a { text-decoration: none; color: inherit; }
+.navbar a.active { font-weight: bold; text-decoration: underline; }
+.content { flex: 1; padding: 20px; }
+.footer { padding: 12px 20px; border-top: 1px solid #ccc; font-size: 14px; }
